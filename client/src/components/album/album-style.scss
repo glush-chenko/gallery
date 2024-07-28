@@ -1,0 +1,116 @@
+@import "../../styles/colors";
+
+.album-container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.album {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  flex-grow: 1;
+
+  list-style-type: none;
+  padding: 20px;
+
+  @media (max-width: 1540px) {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  @media (max-width: 500px) {
+    gap: 8px;
+    padding: 10px;
+  }
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+  .albums-page {
+    display: flex;
+
+    background-color: lightgrey;
+    border: none;
+    border-radius: 15px;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:  background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+ul.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  list-style: none;
+  height: 100%;
+  overflow: hidden;
+}
+
+.pagination {
+  .page-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 20px;
+    height: 100%;
+    cursor: pointer;
+
+    &.active {
+      background-color: lightgrey;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      color: $secondary_color_text;
+    }
+
+    &.disabled {
+      //background-color: lightgrey;
+
+      .page-link {
+        pointer-events: none;
+      }
+    }
+
+    .page-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: transparent;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      height: 100%;
+      //width: 100%;
+      //padding: 0 14px;
+      transition: color 0.3s ease;
+      width: 35px;
+
+
+      &:hover {
+        color: $secondary_color_text;
+      }
+    }
+  }
+}

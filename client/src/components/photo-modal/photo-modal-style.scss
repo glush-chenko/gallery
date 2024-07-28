@@ -1,0 +1,110 @@
+@import "../../styles/colors";
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 20px 0 20px;
+  border-right: 10px;
+  border-radius: 10px;
+  background-color: $secondary-color-bright;
+  z-index: 99;
+  max-height: 950px;
+
+  @media (max-width: 1150px) {
+    padding: 15px 15px 0 15px;
+  }
+
+  @media (max-width: 950px) {
+    padding: 10px 10px 0 10px;
+  }
+
+  &.photo-modal {
+    border-radius: 10px;
+    max-height: 850px;
+
+    @media (max-width: 1150px) {
+      max-width: 850px;
+    }
+
+    @media (max-width: 950px) {
+      max-width: 750px;
+    }
+
+    @media (max-width: 800px) {
+      max-width: 600px;
+    }
+
+    @media (max-width: 750px) {
+      max-height: 700px;
+      max-width: 550px;
+    }
+
+    @media (max-width: 600px) {
+      max-height: 600px;
+      max-width: 420px;
+    }
+
+    @media (max-width: 510px) {
+      max-height: 520px;
+      max-width: 370px;
+    }
+
+    @media (max-width: 450px) {
+      max-height: 480px;
+    }
+  }
+}
+
+.modal-button {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 10px;
+
+  @media (max-width: 1150px) {
+    gap: 5px;
+  }
+
+  h4 {
+    color: $secondary-color;
+    font-weight: 500;
+
+    @media (max-width: 800px) {
+      font-size: 14px;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+
+    border: none;
+    background-color: transparent;
+  }
+
+  img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+
+    @media (max-width: 800px) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.tint-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $secondary-color-dark;
+  opacity: 0.5;
+}

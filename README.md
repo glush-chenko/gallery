@@ -19,25 +19,23 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
-*Не забудьте заменить `yourusername` и `your-repo` на свои реальные данные.*
+   git clone git@github.com:alena-glushchenko/gallery.git
 
 2. Убедитесь, что у вас установлен [Docker](https://docs.docker.com/get-docker/)
 
 3. Соберите и запустите контейнеры:
 - Для Directus перейдите в каталог ./directus и запустите:
    ```bash
-   docker-compose up 
+   docker compose up 
   
 - Для frontend части перейдите в каталог ./client и запустите:
    ```bash
    docker build -t your-name . 
    docker run -p 3000:3000 your-name
   
-4. Откройте браузер и перейдите по адресу http://localhost:3000(http://localhost:3000) для доступа к frontend.
+4. Откройте браузер и перейдите по адресу [http://localhost:3000](http://localhost:3000) для доступа к frontend.
 
-5. Для доступа к админке Directus откройте http://localhost:8055(http://localhost:8055) и войдите с помощью следующих учетных данных:
+5. Для доступа к админке Directus откройте [http://localhost:8055](http://localhost:8055) и войдите с помощью следующих учетных данных:
 
 - **Логин:** `admin@example.com`
 - **Пароль:** `d1r3ctu5`

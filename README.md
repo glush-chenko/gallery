@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Сайт-галерея
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание проекта
+Этот проект представляет собой веб-сайт галереи, на который администраторы могут загружать фотографии, используя автономный сервер Directus. 
+Затем посетители могут просматривать эти фотографии в альбомах, что упрощает работу с ними.
 
-## Available Scripts
+### Особенности:
+- Серверная часть работает на автономном хостинге Directus.
+- Загрузка фотографий осуществляется через панель администратора Directus (доступна по адресу: [http://localhost:8055](http://localhost:8055)).
+- Интерфейсное приложение, помещенное в контейнер Docker с конфигурацией Docker Compose для простого развертывания вместе с Directus.
+- Реализован механизм создания альбомов для упорядочивания фотографий.
+- Пагинация по фотографиям.
+- Адаптивный дизайн обеспечивает согласованность макета независимо от размеров изображения или соотношения сторон.
+- Настраиваемый маршрут для удобного обмена ссылками на альбомы и фотографии.
+- Поддержка миниатюр обеспечивает эффективную загрузку изображений без изменения размера на стороне клиента.
+- Так же добавлена функциональность закрытия модального окна по нажатию вне фотографии. Это сделано на собственное усмотрение и может быть легко убрано
 
-In the project directory, you can run:
+## Инструкция по запуску приложения:
 
-### `npm start`
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/yourusername/your-repo.git
+   cd your-repo
+*Не забудьте заменить `yourusername` и `your-repo` на свои реальные данные.*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Убедитесь, что у вас установлен [Docker](https://docs.docker.com/get-docker/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+3. Соберите и запустите контейнеры:
+- Для Directus перейдите в каталог ./directus и запустите:
+   ```bash
+   docker-compose up 
+  
+- Для frontend части перейдите в каталог ./client и запустите:
+   ```bash
+   docker build -t your-name . 
+   docker run -p 3000:3000 your-name
+  
+4. Откройте браузер и перейдите по адресу http://localhost:3000(http://localhost:3000) для доступа к frontend.
 
-### `npm test`
+5. Для доступа к админке Directus откройте http://localhost:8055(http://localhost:8055) и войдите с помощью следующих учетных данных:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Логин:** `admin@example.com`
+- **Пароль:** `d1r3ctu5`
 
-### `npm run build`
+*по умолчанию загружать картинки необходимо в библиотеку файлов, затем добавлять их в основную коллекцию Albums*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Скриншоты:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Screenshot 1](screenshots/Screenshot_albums.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Screenshot 1](screenshots/Screenshot_album.png)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Screenshot 1](screenshots/Screenshot_modal.png)

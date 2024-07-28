@@ -1,0 +1,39 @@
+@import "../../styles/colors";
+
+.album-list-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+
+  list-style-type: none;
+  padding: 20px;
+
+  @media (max-width: 500px) {
+    padding: 10px;
+  }
+
+  h4 {
+    color: $secondary_color_text;
+    font-weight: 600;
+  }
+
+  h5 {
+    color: $secondary-color;
+    font-weight: 500;
+  }
+}
+
+.custom-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  text-decoration: none;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

@@ -19,7 +19,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone git@github.com:alena-glushchenko/gallery.git
+   git clone git@github.com:glush-chenko/gallery.git
 
 2. Убедитесь, что у вас установлен [Docker](https://docs.docker.com/get-docker/)
 
